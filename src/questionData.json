@@ -1,0 +1,13 @@
+{
+  "surveyTitle": "",
+ 
+  "questions": [
+    {
+      "questionText": "",
+      "type": "radio",
+      "isRequired": false,
+      "choices": []
+    }
+ 
+  ]
+}
