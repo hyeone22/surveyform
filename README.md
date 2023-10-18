@@ -108,17 +108,21 @@ Components
     
 ### `Question`
 
-    'useState'를 사용하여 localQuestionData 상태를 초기화합니다. 현재 질문의 데이터를 관리하고 초기값으로 빈 문자열의 질문 텍스트와 'radio' 타입을 갖는 질문을 출력합니다. 또한, radioOptions, checkboxOptions, 그리고 optionText 배열도 초기화됩니다. 
+    'useState'를 사용하여 localQuestionData 상태를 초기화합니다. 현재 질문의 데이터를 관리하고 초기값으로 빈 문자열의 질문 텍스트와 'radio' 타입을 갖는 질문을 출력합니다.
+    또한, radioOptions, checkboxOptions, 그리고 optionText 배열도 초기화됩니다. 
 
     handleTypeChange 함수는 질문 유형을 변경할 때 호출됩니다. type을 변경하면 localQuestionData가 업데이트됩니다.(라디오버튼/체크박스 버튼) 
 
-    addOption 함수는 라디오 버튼 또는 체크박스 옵션을 추가하는 데 사용됩니다. 현재 선택된 유형에 따라 localQuestionData의 radioOptions 또는 checkboxOptions 배열에 새 옵션을 추가합니다.
+    addOption 함수는 라디오 버튼 또는 체크박스 옵션을 추가하는 데 사용됩니다.
+    현재 선택된 유형에 따라 localQuestionData의 radioOptions 또는 checkboxOptions 배열에 새 옵션을 추가합니다.
 
     showQuest 함수는 질문을 삭제하는데 사용됩니다. 기본적으로 true로 설정되어 있으며, handleDelete 함수를 호출하면 showQuest를 false로 변경하여 질문을 숨깁니다.
 
-    handleOptionChange 함수는 라디오 버튼 또는 체크박스 옵션의 변경 내용을 처리합니다. 변경된 데이터를 localQuestionData에 업데이트하고 updateQuestionData 함수를 호출하여 AddForm의 질문 데이터를 업데이트합니다.
+    handleOptionChange 함수는 라디오 버튼 또는 체크박스 옵션의 변경 내용을 처리합니다.
+    변경된 데이터를 localQuestionData에 업데이트하고 updateQuestionData 함수를 호출하여 AddForm의 질문 데이터를 업데이트합니다.
 
-    handleInputChange 함수는 질문 텍스트나 질문 유형 변경과 같이 다른 입력 요소의 변경 내용을 처리합니다. 변경된 데이터를 localQuestionData에 업데이트하고 updateQuestionData 함수를 호출하여 AddForm 질문 데이터를 업데이트합니다.
+    handleInputChange 함수는 질문 텍스트나 질문 유형 변경과 같이 다른 입력 요소의 변경 내용을 처리합니다.
+    변경된 데이터를 localQuestionData에 업데이트하고 updateQuestionData 함수를 호출하여 AddForm 질문 데이터를 업데이트합니다.
 
     ```
         const handleOptionChange = (optionType, index, value) => {
