@@ -3,23 +3,40 @@ import styled from 'styled-components';
 import Toggle from '../ui/Toggle';
 
 const QuestionContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 1px solid red;
-  width: 90%;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const QuestionContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
 `;
 
 const QuestionMain = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
 `;
 
-const QuestionFooter = styled.div``;
+const QuestionFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 
 function Question({ questionData, updateQuestionData }) {
   const [localQuestionData, setLocalQuestionData] = useState({
@@ -29,6 +46,7 @@ function Question({ questionData, updateQuestionData }) {
     checkboxOptions: [], 
     optionText: [],
   });
+
 
   const handleTypeChange = (e) => {
     const type = e.target.value;
@@ -41,8 +59,7 @@ function Question({ questionData, updateQuestionData }) {
   const addOption = () => {
     const newOption = { optionText: '' };
     const options = localQuestionData.type === 'radio'
-      ? [...localQuestionData.radioOptions, newOption]
-      : [...localQuestionData.checkboxOptions, newOption];
+      ? [...localQuestionData.radioOptions, newOption] : [...localQuestionData.checkboxOptions, newOption];
     setLocalQuestionData({
       ...localQuestionData,
       [`${localQuestionData.type}Options`]: options,
@@ -85,8 +102,8 @@ function Question({ questionData, updateQuestionData }) {
             value={localQuestionData.type}
             onChange={handleTypeChange}
           >
-            <option value="radio">라디오 버튼</option>
-            <option value="checkbox">체크박스</option>
+            <option value="radio">radio button</option>
+            <option value="checkbox">checkbox</option>
           </select>
         </QuestionContent>
 

@@ -36,11 +36,10 @@ function MainPage() {
   const [datas, setDatas] = useState({ surveyTitle: "", surveyDuration: { start: "", end: "" } });
 
   useEffect(() => {
-    // Retrieve data from localStorage
-    const storedData = localStorage.getItem('surveyData');  // Adjust the key as needed
+
+    const storedData = localStorage.getItem('surveyData');  
 
     if (storedData) {
-      // Parse the retrieved data and update the state
       setDatas(JSON.parse(storedData));
     }
   }, []);

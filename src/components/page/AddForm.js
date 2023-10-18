@@ -10,7 +10,7 @@ const AppContainer = styled.div`
   align-items: center;
   text-align: center;
   padding: 10px;
-  border: 1px solid red;
+ 
 `;
 
 const ArrowEmoji = styled.p`
@@ -19,21 +19,51 @@ const ArrowEmoji = styled.p`
   cursor: pointer;
 `;
 
-const AppTitle = styled.p`
-  font-size: 24px;
+const AppTitle = styled.h1`
+  font-size: 28px;
   font-weight: bold;
   margin: 0;
   text-align: center;
   align-items: center;
 `;
 
-const AppContent = styled.div``;
+const AppContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+`;
 
-const DurationContainer = styled.div``;
+const DurationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+`;
 
 const AddButton = styled.button`
   font-size: 24px;
   cursor: pointer;
+  background-color: #007bff; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  margin-top: 20px;
+`;
+
+const StyledButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
 `;
 
 function AddForm() {
@@ -46,9 +76,9 @@ function AddForm() {
     questions: [],
   });
 
-  const [questionComponents, setQuestionComponents] = useState([<Question key={0} />]); // Start with one QuestionContainer
-
   const navigate = useNavigate();
+
+  const [questionComponents, setQuestionComponents] = useState([<Question key={0} />]); // 기본 한개의 질문들
 
   const createNewQuestion = () => {
     const newQuestion = { questionText: "", type: "radio", optionText: "" };
@@ -60,7 +90,6 @@ function AddForm() {
   };
 
   useEffect(() => {
-    // Data retrieval
     const storedSurveyData = localStorage.getItem('surveyData');
     if (storedSurveyData) {
       setSurveyData(JSON.parse(storedSurveyData));
@@ -139,17 +168,16 @@ function AddForm() {
             placeholder='YYYYMMDD'
           />
         </DurationContainer>
-
-        {surveyData.questions.map((question, index) => (
-          <Question
-            key={index}
-            questionData={question}
-            updateQuestionData={(updatedData) => updateQuestionData(updatedData, index)}
-          />
+        {[...surveyData.questions, { questionText: "", type: "radio", optionText: "" }].map((question, index) => (
+        <Question
+          key={index}
+          questionData={question}
+          updateQuestionData={(updatedData) => updateQuestionData(updatedData, index)}
+        />
         ))}
 
         <AddButton onClick={createNewQuestion}>++++</AddButton>
-        <button onClick={saveSurvey}>등록하기</button>
+        <StyledButton onClick={saveSurvey}>등록하기</StyledButton>
       </AppContent>
     </>
   );
