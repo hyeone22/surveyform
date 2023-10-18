@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <BrowserRouter  basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route index element={<MainPage />} />
         <Route path="add-form" element={<AddForm />} />  
