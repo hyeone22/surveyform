@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/surveyform/static/css/main.073c9b0a.css",
-    "main.js": "/surveyform/static/js/main.39cd4705.js",
+    "main.js": "/surveyform/static/js/main.c74ed042.js",
     "index.html": "/surveyform/index.html",
     "main.073c9b0a.css.map": "/surveyform/static/css/main.073c9b0a.css.map",
-    "main.39cd4705.js.map": "/surveyform/static/js/main.39cd4705.js.map"
+    "main.c74ed042.js.map": "/surveyform/static/js/main.c74ed042.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.39cd4705.js"
+    "static/js/main.c74ed042.js"
   ]
 }
